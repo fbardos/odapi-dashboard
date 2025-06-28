@@ -18,6 +18,4 @@ RUN git clone https://github.com/fbardos/odapi-dashboard.git .
 
 EXPOSE 8501
 
-HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
-
 ENTRYPOINT ["conda", "run", "-n", "odapi_dashboard", "streamlit", "run", "apps/app_indikator.py", "--server.port=8501", "--server.address=0.0.0.0"]
