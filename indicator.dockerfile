@@ -18,4 +18,4 @@ RUN git clone https://github.com/fbardos/odapi-dashboard.git .
 
 EXPOSE 8501
 
-ENTRYPOINT ["conda", "run", "-n", "odapi_dashboard", "streamlit", "run", "apps/app_indikator.py", "--server.port=8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["conda", "run", "--live-stream", "-n", "odapi_dashboard", "streamlit", "run", "apps/app_indikator.py", "--server.port=8501", "--server.address=0.0.0.0"]
