@@ -1,0 +1,7 @@
+pandas
+geopandas
+pyarrow
+plotly
+streamlit
+python-dotenv
+statsmodels

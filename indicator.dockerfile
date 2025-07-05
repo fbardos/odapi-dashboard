@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3
+FROM python:3.12-bookworm
 
 RUN mkdir -p /app/dashboard
 WORKDIR /app/dashboard
@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY environment.yml ../
+COPY requirements.txt ../
 
-RUN conda env create -f ../environment.yml --solver libmamba
+RUN pip install --no-cache-dir -r ../requirements.txt
 
 RUN git clone https://github.com/fbardos/odapi-dashboard.git .
 
